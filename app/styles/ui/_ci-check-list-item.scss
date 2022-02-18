@@ -1,0 +1,109 @@
+.ci-check-list-item {
+  display: flex;
+  width: 100%;
+  border-bottom: var(--base-border);
+  height: 100%;
+
+  .ci-check-status-symbol {
+    padding: var(--spacing);
+    padding-top: 11px;
+  }
+
+  .ci-check-list-item-detail {
+    flex: 1;
+    margin: auto;
+  }
+
+  .ci-check-name {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .ci-check-description {
+    color: var(--text-secondary-color);
+    font-weight: var(--text-secondary-color);
+    font-size: var(--font-size-sm);
+    line-height: 9px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+    width: 250px;
+    height: 12px;
+  }
+}
+
+.ci-check-list-item-logs {
+  .view-on-github {
+    padding: var(--spacing);
+
+    .button-component {
+      width: 100%;
+    }
+  }
+
+  .ci-check-list-item-logs-output {
+    padding: var(--spacing-half);
+    max-height: 200px;
+    overflow: auto;
+    word-break: break-word;
+
+    pre {
+      margin: 0;
+    }
+  }
+
+  &.actions {
+    color: var(--check-run-header-label-text-color);
+    background-color: var(--check-run-bg-color);
+    border-color: var(--check-run-border-color);
+
+    .ci-check-run-log-step {
+      div:first-child:hover {
+        background-color: var(--check-run-step-header-open-bg-color);
+      }
+
+      .ci-check-run-log-step-header {
+        border-radius: 6px;
+        padding: 8px;
+        margin-bottom: var(--spacing-half);
+        margin-left: var(--spacing-half);
+        margin-right: var(--spacing-half);
+        color: var(--check-run-text-secondary-color);
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+
+        &.open {
+          color: var(--check-run-text-primary-color);
+          background-color: var(--check-run-step-header-open-bg-color);
+        }
+
+        .ci-check-run-log-step-header-container {
+          display: flex;
+          align-items: center;
+
+          .ci-check-run-log-step-name {
+            flex: 1;
+          }
+
+          .log-step-toggled-indicator,
+          .log-step-status {
+            margin-right: var(--spacing);
+          }
+        }
+      }
+
+      .ci-check-run-step-log-display {
+        // TODO: Future PR for log parsing - use theme variables here (this is just copied from github.com inspector)
+        word-wrap: break-word;
+        font-family: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace !important;
+        font-size: var(--font-size-sm);
+        padding-top: 4px !important;
+        padding-bottom: 4px !important;
+        margin-top: 8px !important;
+        margin-bottom: 8px !important;
+        margin-left: 8px !important;
+      }
+    }
+  }
+}
