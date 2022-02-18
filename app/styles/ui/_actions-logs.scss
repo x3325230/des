@@ -1,0 +1,48 @@
+// TODO: make this class name actions specific
+.ci-check-list-item-logs-output {
+  .line {
+    display: flex;
+    font-family: monospace;
+
+    .line-number {
+      width: var(--spacing-double);
+      overflow: hidden;
+      text-align: right;
+      text-decoration: none;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      user-select: none;
+    }
+
+    .line-content {
+      margin-left: var(--spacing);
+      overflow-x: auto;
+      white-space: pre-wrap;
+    }
+
+    &.log-line-plain {
+      .line-content {
+        max-width: 90%;
+      }
+    }
+
+    &.log-line-group {
+      details.log-group {
+        max-width: 90%;
+        margin-left: var(--spacing);
+
+        .line {
+          margin-left: calc(var(--spacing-triple) * -1);
+          .line-content {
+            margin-left: var(--spacing-double);
+            max-width: 88%;
+          }
+        }
+      }
+
+      .line-content:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
